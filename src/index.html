@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/dist/app.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper" id="app">
+        <header class="header">
+            <div class="logo">
+                <a href="/"><img src="img/icons/logo.png" alt=""></a>
+            </div>
+            <div class="header__navigation-wrapper">
+                <nav class="navigation">
+                    <a href="" class="navigation__link navigation__link--active"><span>Популярное</span></a>
+                    <a href="" class="navigation__link"><span>Свежее</span><span class="link-counter">25</span></a>
+                </nav>
+                <button class="btn-blog">Блоги</button>
+            </div>
+            <div class="header__buttons">
+                <button class="btn-search">Поиск</button>
+                <button class="btn-write">Написать</button>
+                <button class="btn-login">Войти</button>
+            </div>
+            <div class="burger">
+                <button class="hamburger" @click="openMenu">
+                    <span></span>
+                </button>
+            </div>
+            <div class="mobile-menu" ref="mobile">
+                <div class="mobile-menu__head">
+                    <a href=""><img src="img/icons/logo.png" alt=""></a>
+                    <button class="mobile-menu__close" @click="closeMenu">+</button>
+                </div>
+                
+                <ul class="mobile-menu__col-1">
+                    <li class="mobile-menu__navigation"><a href="">Популярное</a></li>
+                    <li class="mobile-menu__navigation"><a href="">Свежее<span class="link-counter">25</span></a></li>
+                    <li><button class="btn-login">Войти</button></li>
+                    <button class="btn-search">Поиск</button>
+                </ul>
+                <ul class="mobile-menu__col-2">
+                    <li><button class="btn-write">Написать</button></li>
+                    <li><button class="btn-blog">Блоги</button></li>
+                </ul>
+            </div>
+        </header>
+        <main class="main">
+            <router-view></router-view>
+
+            <!-- <question-component :questions="dataQuestions" :results="dataResults" v-if=!showStartScreen></question-component> --> <!--Тут была версия работы компонента без роутинга, он будет работать везде самостоятельно, если на входе ему передать нужные данные по вопросам и ответам из базы-->
+
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <script src="/dist/app.js"></script>
+</body>
+</html>
