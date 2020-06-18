@@ -160,6 +160,9 @@ ul {
     @media (max-width:460px) {
         padding-top: 40px;
     }
+    @media only screen and (max-height: 768px) {
+        padding-top: 60px;
+    }
 }
 .content-container {
     position: relative;
